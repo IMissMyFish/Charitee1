@@ -1,0 +1,120 @@
+* {
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 400;
+
+}
+/* charity panel */
+
+#logoSec {
+z-index: 5;
+margin: -45px;
+}
+
+/*#logo {*/
+/*  margin-top: 5rem;*/
+/*  margin-left: 41%;*/
+/**/
+/*  position: relative;*/
+/*  z-index: 5;*/
+/*  width: 20%;*/
+/*  height: 20%;*/
+/*}*/
+
+#logo {
+    /* margin-top: 0rem; */
+    margin-left: 3%;
+    position: relative;
+    z-index: 4;
+    width: 5%;
+    height: 5%;
+}
+
+#bgImg {
+
+position: fixed;
+z-index: -2;
+
+}
+
+.tint {
+  position: fixed;
+  float: left;
+  z-index: 2;
+}
+
+.tint:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(232,96,83, 1);
+  z-index: 0;
+}
+
+
+#bodySec {
+
+z-index: 5;
+position: relative;
+
+}
+
+#buttonSec {
+  margin-top: 5%;
+  width: 50%;
+  margin-left: 35%;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: white;
+    color: rgb(232,96,83);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.9;
+
+}
+
+#dbtn {
+
+  margin-right: 3%;
+
+}
+
+#textSec {
+
+color: white;
+font-weight: 400;
+width: 100%;
+margin-left: 13%;
+
+}
+
+
+.aboutPiece {
+
+  vertical-align: top;
+  width: 22%;
+  height: 20%;
+  margin-top: 7rem;
+  margin-left: 3%;
+  font-size: 80%;
+  display: inline-block;
+  text-align: center;
+}
