@@ -29,7 +29,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
   <div id = "header">
 
-    <h3>  <a href="./dash.php"><img id = "logoimg" src = "./dark_logo_transparent.png"/></a></h3>
+    <h3><a href="./dash.php"><!--<img id = "logoimg" src = "./dark_logo_transparent.png"/>-->Charitee</a></h3>
     <h4><a class = "topLinks" href = "./settings.php">Settings</a></h4>
     <h4><a class = "topLinks" href = "./profile.php">Profile</a></h4>
     <h4><a class = "topLinks" href = "./volunteer.php">Volunteer</a></h4>
@@ -39,7 +39,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
   </div>
 
   <div id = "exploreBox" class = "container">
-    <h1>Explore Charities</h1>
+    <h1>User's Profile</h1>
     <br>
   </div>
 
