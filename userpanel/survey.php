@@ -30,7 +30,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
   <div id = "header">
 
-    <h3>  <a href="./profile.php">Charitee</a></h3>
+    <h3>  <a href="./dash.php">Charitee</a></h3>
     <h4><a class = "topLinks" href = "./settings.php">Settings</a></h4>
     <h4><a class = "topLinks" href = "./profile.php">Profile</a></h4>
     <h4><a class = "topLinks" href = "./volunteer.php">Volunteer</a></h4>
@@ -51,30 +51,30 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
       User's FN, would you like to answer a quick questionaire before you get started to help find charities for you?
     </div>
     <div class="options">
-			
-			   
+
+
       <span class="op" for="q2op1">YES! I'd love to!</span>
 			<span class="op op2" for="q2op2">Not just yet.</span><br />
 
     </div>
-			
+
 
   </div>
-	
+
   <div class="slide" id="slide2">
     <div class="question">
       Which of these interests you?
     </div>
     <div class="options">
-      <span class="op" for="q1op1">Cancer Research</span>			
+      <span class="op" for="q1op1">Cancer Research</span>
 			<span class="op " for="q1op4">Text field</span>
 			<span class="op" for="q1op3">Religion</span>
 			<span class="op op2" for="q1op5">Domestic Violence</span>
-			
+
 			<span class="op op2" id ="Poverty" checked="checked" for="q1op2">Poverty</span>
-	
+
 			<span class="op op2" for="q1op6">Animals</span>
-			
+
 			<span class="op op3" for="q1op7">Disaster Relief</span>
 			<span class="op op3"  for="q1op8">Homeless</span>
 			<span class="op op3" for="q1op9">Children</span>
@@ -82,7 +82,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
     </div>
     </div
   </div>
- 
+
   <div class="slide" id="slide3">
     <div class="question">
       How far would you like your money to reach?
@@ -94,7 +94,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 			<span class="op op2" for="q3op4">Globally</span>
     </div>
   </div>
-	
+
 	  <div class="slide" id="slide4">
     <div class="question">
       Which religions would you be interested in?
@@ -106,8 +106,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 			<span class="op op2" for="q4op4">Globally</span>
     </div>
   </div>
-	
-	
+
+
   <<!--div class="slide" id="slide4">
     Well Done!
     <div class="re">
@@ -117,7 +117,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-  
+
 
     <script  src="quiz-survey/js/index.js"></script>
 
