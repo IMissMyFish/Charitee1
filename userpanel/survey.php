@@ -44,58 +44,54 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
   </div>
 
 
- <div id="q-cont" class = "container">
+<!--<div id="q-cont" class = "container">-->
+<!---->
+<!--  <div class="slide" id="slide1">-->
+<!--    <div class="question">-->
+<!--      User's FN, would you like to answer a quick questionaire before you get started to help find charities for you?-->
+<!--    </div>-->
+<!--    <div class="options">-->
+<!--      <span class="op" for="q1op1">YES! I'd love to!</span>-->
+<!--			<span class="op op2" for="q1op2">Not just yet.</span>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="slide" id="slide1">
-    <div class="question">
-      User's FN, would you like to answer a quick questionaire before you get started to help find charities for you?
-    </div>
-    <div class="options">
+    <div id = "bodySec">
+      <div id = "buttonSec">
+				<h3> User's FN, would you like to answer a quick questionaire before you get started to help find charities for you? </h3>
+        <a href = "./index.html"><button id = "dbtn"><span>YES! I'd love to!</span></button></a>
+        <a href = "./charity.php"><button id = "cbtn"><span>Not just yet.</span></button></a>
+        <!--<a href = "./alreadyregistered.php"><button id = "abtn"><span>Already a member?</span></button></a>-->
+      </div>
+
+<!--  <div class="slide" id="slide2">-->
+<!--    <div class="question">-->
+<!--      Which of these interests you?-->
+<!--    </div>-->
+<!--			<div class="options">-->
+<!--				<span class="op" for="q2op1">Cancer Research</span>-->
+<!--				<span class="op " for="q2op4">Text field</span>-->
+<!--				<span class="op" for="q2op3">Religion</span>-->
+<!--				<span class="op op2" for="q2op5">Domestic Violence</span>-->
+<!--	-->
+<!--				<span class="op op2" id ="Poverty" checked="checked" for="q2op2">Poverty</span>-->
+<!--	-->
+<!--				<span class="op op2" for="q2op6">Animals</span>-->
+<!--	-->
+<!--				<span class="op op3" for="q2op7">Disaster Relief</span>-->
+<!--				<span class="op op3"  for="q2op8">Homeless</span>-->
+<!--				<span class="op op3" for="q2op9">Children</span>-->
+<!--				<span class="op op3" for="q2op9">Text field</span>-->
+<!--			</div>-->
+<!--	</div>-->
+  
 
 
-      <span class="op" for="q2op1">YES! I'd love to!</span>
-			<span class="op op2" for="q2op2">Not just yet.</span><br />
-
-    </div>
 
 
-  </div>
 
-  <div class="slide" id="slide2">
-    <div class="question">
-      Which of these interests you?
-    </div>
-    <div class="options">
-      <span class="op" for="q1op1">Cancer Research</span>
-			<span class="op " for="q1op4">Text field</span>
-			<span class="op" for="q1op3">Religion</span>
-			<span class="op op2" for="q1op5">Domestic Violence</span>
 
-			<span class="op op2" id ="Poverty" checked="checked" for="q1op2">Poverty</span>
-
-			<span class="op op2" for="q1op6">Animals</span>
-
-			<span class="op op3" for="q1op7">Disaster Relief</span>
-			<span class="op op3"  for="q1op8">Homeless</span>
-			<span class="op op3" for="q1op9">Children</span>
-			<span class="op op3" for="q1op9">Text field</span>
-    </div>
-    </div
-  </div>
-
-  <div class="slide" id="slide3">
-    <div class="question">
-      How far would you like your money to reach?
-    </div>
-    <div class="options">
-      <span class="op" for="q3op1">Locally</span>
-			<span class="op op2" for="q3op2">Regionally</span>
-			<span class="op" for="q3op3">Nationally</span>
-			<span class="op op2" for="q3op4">Globally</span>
-    </div>
-  </div>
-
-	  <div class="slide" id="slide4">
+<!--	<div class="slide" id="slide4">
     <div class="question">
       Which religions would you be interested in?
     </div>
@@ -105,10 +101,10 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 			<span class="op" for="q4op3">Nationally</span>
 			<span class="op op2" for="q4op4">Globally</span>
     </div>
-  </div>
+  </div>-->
 
 
-  <<!--div class="slide" id="slide4">
+  <!--div class="slide" id="slide4">
     Well Done!
     <div class="re">
       Reset
