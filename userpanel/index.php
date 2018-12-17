@@ -9,19 +9,19 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
 <?php
   }
-  else { header("Location: ./index.html"); }
+  else { header("Location: ./index.php"); }
  ?>
 
 <html lang="en" >
 
 <head>
-    
+
         <title>Charitee Questionaire</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://unpkg.com/jquery"></script>
 				<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 				<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
-		    <link  rel = "stylesheet" type = "text/css"  href = "./standard.css">			
+		    <link  rel = "stylesheet" type = "text/css"  href = "./standard.css">
         <script src="https://surveyjs.azureedge.net/1.0.56/survey.jquery.js"></script>
         <link href="https://surveyjs.azureedge.net/1.0.56/survey.css" type="text/css" rel="stylesheet"/>
         <!--<link rel="stylesheet" href="./index.css">-->
@@ -30,7 +30,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
     </head>
     <body>
-			
+
 			  <div id = "header">
 
     <h3>  <a href="./dash.php">Charitee</a></h3>

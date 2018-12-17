@@ -9,7 +9,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
 <?php
   }
-  else { header("Location: ./index.html"); }
+  else { header("Location: ./index.php"); }
  ?>
 
 <html>
@@ -59,7 +59,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
     <div id = "bodySec">
       <div id = "buttonSec">
 				<h3> User's FN, would you like to answer a quick questionaire before you get started to help find charities for you? </h3>
-        <a href = "./index.html"><button id = "dbtn"><span>YES! I'd love to!</span></button></a>
+        <a href = "./index.php"><button id = "dbtn"><span>YES! I'd love to!</span></button></a>
         <a href = "./charity.php"><button id = "cbtn"><span>Not just yet.</span></button></a>
         <!--<a href = "./alreadyregistered.php"><button id = "abtn"><span>Already a member?</span></button></a>-->
       </div>
@@ -84,7 +84,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 <!--				<span class="op op3" for="q2op9">Text field</span>-->
 <!--			</div>-->
 <!--	</div>-->
-  
+
 
 
 
