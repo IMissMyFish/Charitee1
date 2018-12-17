@@ -23,10 +23,10 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
    include('../charities.php');
 
-   $result = mysqli_query($connection, 'SELECT * FROM charities WHERE email = "'.$_GET['id'].'" ');
+   $result = mysqli_query($connection, 'SELECT * FROM charities WHERE uname = "'.$_GET['id'].'" ');
 
    $stmt = $connection->stmt_init();
-   $stmt = $connection->prepare('SELECT * FROM charities WHERE email = "'.$_GET['id'].'" ');
+   $stmt = $connection->prepare('SELECT * FROM charities WHERE uname = "'.$_GET['id'].'" ');
    $stmt->execute();
    $stmt->store_result();
    $stmt->fetch();
@@ -41,6 +41,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
      $id = array();
      $cname = array();
      $city = array();
+     $zip = array();
 
 
      while($row = mysqli_fetch_assoc($result)) {
@@ -49,7 +50,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
        $id[] =  $row['id'];
        $cname[] = $row['cname'];
        $city[] =$row['city'];
-
+       $zip[] =$row['zip'];
 
 
      }
@@ -57,10 +58,12 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
      unset($_SESSION["id"]);
      unset($_SESSION["cname"]);
      unset($_SESSION["city"]);
+    unset($_SESSION["zip"]);
 
      $_SESSION['id'] = $id;
      $_SESSION['cname'] = $cname;
      $_SESSION['city'] = $city;
+    $_SESSION['zip'] = $zip;
 
    }
 
@@ -101,7 +104,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
   <div id = "exploreBox" class = "container">
     <h1><?php echo $_SESSION['cname'][0]?></h1>
     <br>
-    <h3><?php echo $_SESSION ['city'][0]?></h3>
+    <h3><?php echo $_SESSION['city'][0]?>, <?php echo $_SESSION['zip'][0] ?></h3>
     <br>
   </div>
 
