@@ -29,15 +29,16 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
   <div id = "header">
 
-    <h3><a href="./dash.php"><!--<img id = "logoimg" src = "./dark_logo_transparent.png"/>-->Charitee</a></h3>
+    <h3>  <a href="./dash.php">Charitee</a></h3>
     <h4><a class = "topLinks" href = "./settings.php">Settings</a></h4>
     <h4><a class = "topLinks" href = "./profile.php">Profile</a></h4>
     <h4><a class = "topLinks" href = "./explore.php">Explore</a></h4>
 
+
   </div>
 
   <div id = "exploreBox" class = "container">
-    <h1>NonProfit Profile</h1>
+    <h1>Explore Charities</h1>
     <br>
   </div>
 
