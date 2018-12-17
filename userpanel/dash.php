@@ -34,7 +34,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
     <!--<h3>Charitee</h3>-->
 
     <h4><a class = "topLinks" href = "./settings.php">Settings</a></h4>
-    <h4><a class = "topLinks" href = "./profile.php">Profile</a></h4>
+    <h4><a class = "topLinks" href = "./uprofile.php">Profile</a></h4>
     <h4><a class = "topLinks" href = "./volunteer.php">Volunteer</a></h4>
     <h4><a class = "topLinks" href = "./explore.php">Explore</a></h4>
     <h4><a class = "topLinks" href = "./recommended.php">Recommended</a></h4>

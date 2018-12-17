@@ -85,7 +85,7 @@ $sql = "SELECT * FROM charities";
 
     <h3>  <a href="./dash.php">Charitee</a></h3>
     <h4><a class = "topLinks" href = "./settings.php">Settings</a></h4>
-    <h4><a class = "topLinks" href = "./profile.php?id=<?php echo $_SESSION['sess_user'] ?>">Profile</a></h4>
+    <h4><a class = "topLinks" href = "./uprofile.php?id=<?php echo $_SESSION['sess_user'] ?>">Profile</a></h4>
     <h4><a class = "topLinks" href = "./explore.php">Explore</a></h4>
 
 
