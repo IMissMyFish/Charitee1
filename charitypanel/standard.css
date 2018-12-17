@@ -167,9 +167,9 @@ margin-left: 13%;
 
 .container {
     position: relative;
-    left: 40%;
+    left: 30%;
     padding: 0rem;
-    width: 20%;
+    width: 40%;
     background-color: rgba(256, 256, 256, 0.98);
     margin-top: 2%;
     z-index: 5;
@@ -352,4 +352,17 @@ body {
   width: 45%;
   /*margin: 5px 20px 20px;*/
   vertical-align: top;
+}
+
+#exploreBox{
+  padding: 1% 1%;
+
+  border-radius: 30px;
+
+}
+
+#clink:hover {
+
+  color: black;
+
 }

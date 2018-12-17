@@ -96,7 +96,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
     <h3><a href="./dash.php"><!--<img id = "logoimg" src = "./dark_logo_transparent.png"/>-->Charitee</a></h3>
     <h4><a class = "topLinks" href = "./settings.php">Settings</a></h4>
-    <h4><a class = "topLinks" href = "./profile.php?id=<?php echo $_SESSION['sess_user'] ?>">Profile</a></h4>
+    <h4><a class = "topLinks" href = "./cprofile.php?id=<?php echo $_SESSION['sess_user'] ?>">Profile</a></h4>
     <h4><a class = "topLinks" href = "./explore.php">Explore</a></h4>
 
   </div>
