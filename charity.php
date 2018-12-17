@@ -3,20 +3,20 @@
 
 <?php
 
-$emailErr = $pswErr = "";
+$unameErr = $pswErr = "";
 
 include('charities.php');
 if(isset($_POST['action']))
 {
     if($_POST['action']=="login")
     {
-        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $uname = mysqli_real_escape_string($connection,$_POST['uname']);
         $psw = mysqli_real_escape_string($connection,$_POST['psw']);
 
 
         $stmt2 = $connection->stmt_init();
-        $stmt2 = $connection->prepare("SELECT password FROM charities WHERE email = ?");
-        $stmt2->bind_param("s", $email);
+        $stmt2 = $connection->prepare("SELECT password FROM charities WHERE uname = ?");
+        $stmt2->bind_param("s", $uname);
         $stmt2->execute();
         $stmt2->store_result();
         $stmt2->bind_result($hashedPassword);
@@ -32,7 +32,7 @@ if(isset($_POST['action']))
                 print("Password is valid, login successful!");
                 session_start();
                 $_SESSION['logged_in'] = true;
-                $_SESSION['sess_user'] = $email;
+                $_SESSION['sess_user'] = $uname;
 
                 header("location:charitypanel/dash.php"); //redirect user to member page
             }
@@ -44,7 +44,7 @@ if(isset($_POST['action']))
         }
         else
         {
-            $emailErr = " is invalid.";//if num_rows is 0, we know username doesnt exist
+            $unameErr = " is invalid.";//if num_rows is 0, we know username doesnt exist
         }
 
 
@@ -80,9 +80,9 @@ if(isset($_POST['action']))
     <form action="" method = "post">
 
     <div class="container">
-      <label for="email"><b>Email</b></label>
-      <span class="error">* <?php echo $emailErr;?></span>
-      <input type="text" placeholder="Enter Username" name="email" required>
+      <label for="uname"><b>Username</b></label>
+      <span class="error">* <?php echo $unameErr;?></span>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
       <span class="error">* <?php echo $pswErr;?></span>

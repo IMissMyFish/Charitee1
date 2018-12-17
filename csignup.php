@@ -2,7 +2,7 @@
 
 
 <?php
-$cnameErr = $emailErr = $pswErr = $cityErr = "";
+$cnameErr = $emailErr = $pswErr = $cityErr = $unameErr = $zipErr = "";
 
 include('charities.php');
 if(isset($_POST['action']))
@@ -15,9 +15,11 @@ if(isset($_POST['action']))
         $email      = mysqli_real_escape_string($connection,$_POST['email']);
         $psw   = mysqli_real_escape_string($connection,$_POST['psw']);
         $city    = mysqli_real_escape_string($connection,$_POST['city']);
+        $uname =  mysqli_real_escape_string($connection,$_POST['uname']);
+        $zip =  mysqli_real_escape_string($connection,$_POST['zip']);
 
         $query = "SELECT email FROM charities where email='".$email."'";
-        $query2 = "SELECT cname FROM charities where cname='".$cname."'";
+        $query2 = "SELECT uname FROM charities where uname='".$uname."'";
 
         $result = mysqli_query($connection,$query);
         $result2  = mysqli_query($connection,$query2);
@@ -30,10 +32,16 @@ if(isset($_POST['action']))
         $email = test_input($_POST["email"]);
         $cname = test_input($_POST["cname"]);
         $psw = test_input($_POST["psw"]);
+        $city = test_input($_POST["city"]);
+        $uname = test_input($_POST["uname"]);
+        $zip = test_input($_POST["zip"]);
+
 
         if (empty($_POST["email"])) {
+
           $emailErr = " is required";
           $problemCounter = $problemCounter + 1;
+
         } else {
           $email = test_input($_POST["email"]);
 
@@ -68,6 +76,23 @@ if(isset($_POST['action']))
           $psw = test_input($_POST["psw"]);
         }
 
+
+                if (empty($_POST["uname"])) {
+                  $problemCounter = $problemCounter + 1;
+                  $unameErr = " is required";
+                } else {
+                  $uname = test_input($_POST["uname"]);
+                }
+
+
+
+                        if (empty($_POST["zip"])) {
+                          $problemCounter = $problemCounter + 1;
+                          $zipErr = " is required";
+                        } else {
+                          $zip = test_input($_POST["zip"]);
+                        }
+
         if($numResults2 >= 1){
 
           $cnameErr = $cname."Charity name already exists";
@@ -80,7 +105,7 @@ if(isset($_POST['action']))
             $problemCounter = $problemCounter + 1;
         }
 
-        $sql = "insert into `charities` (`cname`, `city`, `email`, `password`) values('".$cname."','".$city."','".$email."','".password_hash($psw, PASSWORD_DEFAULT)."')";
+        $sql = "insert into `charities` (`uname`, `cname`, `city`, `zip`, `email`, `password`) values('".$uname."','".$cname."','".$city."','".$zip."','".$email."','".password_hash($psw, PASSWORD_DEFAULT)."')";
 
         if($problemCounter == 0){
 
@@ -149,6 +174,15 @@ function test_input($data) {
       <span class="error">* <?php echo $cityErr;?></span>
       <input type="text" placeholder="Enter Your City  " name="city"required>
 
+
+      <label for="zip"><b>Zip</b></label>
+      <span class="error">* <?php echo $zipErr;?></span>
+      <input type="text" placeholder="Enter Your 5-digit Zipcode" name="zip"required>
+
+
+      <label for="uname"><b>Username</b></label>
+      <span class="error">* <?php echo $unameErr;?></span>
+      <input type="text" placeholder="Create a username" name="uname"required>
 
       <label for="psw"><b>Password</b></label>
       <span class="error">* <?php echo $pswErr;?></span>
