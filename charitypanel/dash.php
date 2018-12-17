@@ -45,26 +45,23 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
       <!--<img id = "logo" src="./../white_logo_transparent.png">  -->
     </div>
 
-  <div id = "settingsBox" class = "container">
-    <h1>Username's Profile</h1>
     <br>
-    <hr>
-  </div>
+    <br>
 
 	  <div id = "settingsBox" class = "container2">
-     <h1>Trending Relief Efforts:</h1>
+     <h1>Trending Non-Profits in Your Area</h1>
     <br>
     <hr>
   </div>
 
 	<div id = "settingsBox" class = "container3">
-     <h1>Trending Non-Profits in Your Area:</h1>
+     <h1>Statistics</h1>
     <br>
     <hr>
 	</div>
 
 		<div id = "settingsBox" class = "container4">
-     <h1>Feeeeed:</h1>
+     <h1>Recent Donations</h1>
     <br>
     <hr>
 	</div>
