@@ -33,7 +33,8 @@ if(isset($_POST['action']))
                 session_start();
                 $_SESSION['logged_in'] = true;
                 $_SESSION['sess_user'] = $email;
-                header("location:charitypanel/profile.php"); //redirect user to member page
+
+                header("location:charitypanel/dash.php"); //redirect user to member page
             }
 
             else
