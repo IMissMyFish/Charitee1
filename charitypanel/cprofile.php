@@ -16,7 +16,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
 
  <?php
-
+$u1 = "";
  if(isset($_GET['id'])){
 
 
@@ -42,7 +42,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
      $cname = array();
      $city = array();
      $zip = array();
-
+     $uname = array();
+     $bio = array();
 
      while($row = mysqli_fetch_assoc($result)) {
 
@@ -51,7 +52,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
        $cname[] = $row['cname'];
        $city[] =$row['city'];
        $zip[] =$row['zip'];
-
+       $uname[] = $row['uname'];
+       $bio[] = $row['bio'];
 
      }
 
@@ -59,14 +61,17 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
      unset($_SESSION["cname"]);
      unset($_SESSION["city"]);
     unset($_SESSION["zip"]);
+    unset($_SESSION["uname"]);
+    unset($_SESSION["bio"]);
 
      $_SESSION['id'] = $id;
      $_SESSION['cname'] = $cname;
      $_SESSION['city'] = $city;
     $_SESSION['zip'] = $zip;
-
+    $_SESSION['uname'] = $uname;
+    $_SESSION['bio'] = $bio;
+    $u1 = $uname;
    }
-
 
 
 
@@ -102,10 +107,32 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
   </div>
 
   <div id = "exploreBox" class = "container">
+    <?php if($_SESSION['sess_user'] == $_SESSION['uname'][0]){
+
+?>
+<a href = "./editcpro.php" id = "editbtn"><h6>Edit</h6></a>
+    <?php
+    }?>
+    <br>
+    <?php
+    $files = glob("./uploads/{$_SESSION['uname'][0]}/p/1/*.*");
+
+    for ($i=0; $i<count($files); $i++)
+    {
+      $num = $files[$i];
+
+      echo '<img id = "profilepic" src="'.$num.'" alt="profile picture">'."&nbsp;&nbsp;";
+    }
+    ?>
+    <br>
     <h1><?php echo $_SESSION['cname'][0]?></h1>
     <br>
     <h3><?php echo $_SESSION['city'][0]?>, <?php echo $_SESSION['zip'][0] ?></h3>
     <br>
+    <h5><?php echo $_SESSION['bio'][0]?></h5>
+    <br>
+
+
   </div>
 
 </body>

@@ -366,3 +366,28 @@ body {
   color: black;
 
 }
+
+#editcpro {
+
+
+}
+
+#editbtn {
+
+  float: right;
+
+}
+
+#editbtn:hover{
+
+  color: black;
+
+}
+
+#profilepic {
+
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+
+}
