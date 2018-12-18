@@ -44,6 +44,7 @@ $u1 = "";
      $zip = array();
      $uname = array();
      $bio = array();
+     $cat = array();
 
      while($row = mysqli_fetch_assoc($result)) {
 
@@ -54,6 +55,7 @@ $u1 = "";
        $zip[] =$row['zip'];
        $uname[] = $row['uname'];
        $bio[] = $row['bio'];
+       $cat[] = $row['cat'];
 
      }
 
@@ -63,6 +65,7 @@ $u1 = "";
     unset($_SESSION["zip"]);
     unset($_SESSION["uname"]);
     unset($_SESSION["bio"]);
+    unset($_SESSION["cat"]);
 
      $_SESSION['id'] = $id;
      $_SESSION['cname'] = $cname;
@@ -70,6 +73,7 @@ $u1 = "";
     $_SESSION['zip'] = $zip;
     $_SESSION['uname'] = $uname;
     $_SESSION['bio'] = $bio;
+    $_SESSION['cat'] = $cat;
     $u1 = $uname;
    }
 
@@ -126,6 +130,8 @@ $u1 = "";
     ?>
     <br>
     <h1><?php echo $_SESSION['cname'][0]?></h1>
+    <br>
+    <h2><?php echo $_SESSION['cat'][0]?></h2>
     <br>
     <h3><?php echo $_SESSION['city'][0]?>, <?php echo $_SESSION['zip'][0] ?></h3>
     <br>

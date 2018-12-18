@@ -2,7 +2,7 @@
 
 
 <?php
-$cnameErr = $emailErr = $pswErr = $cityErr = $unameErr = $zipErr = "";
+$cnameErr = $emailErr = $pswErr = $cityErr = $unameErr = $zipErr = $catErr = "";
 
 include('charities.php');
 if(isset($_POST['action']))
@@ -17,6 +17,7 @@ if(isset($_POST['action']))
         $city    = mysqli_real_escape_string($connection,$_POST['city']);
         $uname =  mysqli_real_escape_string($connection,$_POST['uname']);
         $zip =  mysqli_real_escape_string($connection,$_POST['zip']);
+        $cat  =  mysqli_real_escape_string($connection,$_POST['cat']);
 
         $query = "SELECT email FROM charities where email='".$email."'";
         $query2 = "SELECT uname FROM charities where uname='".$uname."'";
@@ -35,6 +36,7 @@ if(isset($_POST['action']))
         $city = test_input($_POST["city"]);
         $uname = test_input($_POST["uname"]);
         $zip = test_input($_POST["zip"]);
+        $cat =  test_input($_POST["cat"]);
 
 
         if (empty($_POST["email"])) {
@@ -59,6 +61,15 @@ if(isset($_POST['action']))
         } else {
           $city = test_input($_POST["city"]);
         }
+
+
+                if (empty($_POST["cat"])) {
+                  $catErr = " is required";
+                  $problemCounter = $problemCounter + 1;
+                } else {
+                  $cat = test_input($_POST["cat"]);
+                  // check if name only contains letters and whitespace
+                }
 
 
         if (empty($_POST["cname"])) {
@@ -105,7 +116,7 @@ if(isset($_POST['action']))
             $problemCounter = $problemCounter + 1;
         }
 
-        $sql = "insert into `charities` (`uname`, `cname`, `city`, `zip`, `email`, `password`) values('".$uname."','".$cname."','".$city."','".$zip."','".$email."','".password_hash($psw, PASSWORD_DEFAULT)."')";
+        $sql = "insert into `charities` (`uname`, `cname`, `city`, `zip`, `email`, `password`, `cat`) values('".$uname."','".$cname."','".$city."','".$zip."','".$email."','".password_hash($psw, PASSWORD_DEFAULT)."', '".$cat."')";
 
         if($problemCounter == 0){
 
@@ -169,7 +180,22 @@ function test_input($data) {
       <span class="error">* <?php echo $cnameErr;?></span>
       <input type="text" placeholder="Enter Charity Name" name="cname" required>
 
-
+      <label for="cat"><b>Category</b></label>
+      <br>
+      <select placeholder="Select Category" name="cat" required><?php echo $catErr ?>
+                <option value="Religious">Religious</option>
+                <option value="Education">Education</option>
+                <option value="Disease">Disease</option>
+                <option value="Disaster">Disaster Relief</option>
+                <option value="Shelter">Shelter</option>
+                <option value="Food">Food</option>
+                <option value="Water">Water</option>
+                <option value="Environment">Environment</option>
+                <option value="Animals">Animals</option>
+                <option value="Arts/Culture">Arts/Culture</option>
+              </select>
+<br>
+<br>
       <label for="city"><b>City</b></label>
       <span class="error">* <?php echo $cityErr;?></span>
       <input type="text" placeholder="Enter Your City  " name="city"required>

@@ -42,7 +42,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
     <h1>Settings</h1>
     <br>
     <hr>
-    <h4 class = "settinglinks"><a href = "./logout.php">Edit Account Info</a></h4>
     <h4 class = "settinglinks"><a href = "./logout.php">Logout</a></h4>
   </div>
 
