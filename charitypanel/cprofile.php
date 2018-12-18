@@ -35,6 +35,9 @@ $u1 = "";
    $stmt -> close();
 
 
+
+
+
    if ($numberofrows > 0) {
      // output data of each row
 
@@ -45,6 +48,7 @@ $u1 = "";
      $uname = array();
      $bio = array();
      $cat = array();
+     $pop = array();
 
      while($row = mysqli_fetch_assoc($result)) {
 
@@ -56,6 +60,7 @@ $u1 = "";
        $uname[] = $row['uname'];
        $bio[] = $row['bio'];
        $cat[] = $row['cat'];
+       $pop[] = $row['pop'];
 
      }
 
@@ -66,6 +71,7 @@ $u1 = "";
     unset($_SESSION["uname"]);
     unset($_SESSION["bio"]);
     unset($_SESSION["cat"]);
+    unset($_SESSION['pop']);
 
      $_SESSION['id'] = $id;
      $_SESSION['cname'] = $cname;
@@ -74,6 +80,7 @@ $u1 = "";
     $_SESSION['uname'] = $uname;
     $_SESSION['bio'] = $bio;
     $_SESSION['cat'] = $cat;
+    $_SESSION['pop'] = $pop;
     $u1 = $uname;
    }
 
@@ -83,6 +90,9 @@ $u1 = "";
 
  }
 
+$pop1 = $_SESSION['pop'][0] + 1;
+
+$result0 = mysqli_query($connection, 'UPDATE charities SET pop = "'.$pop1.'" WHERE uname = "'.$_SESSION['uname'][0].'"  ');
 
 ?>
 
