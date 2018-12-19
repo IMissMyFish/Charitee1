@@ -33,7 +33,7 @@ if(isset($_POST['action']))
                 session_start();
                 $_SESSION['logged_in'] = true;
                 $_SESSION['sess_user'] = $uname;
-                header("location:userpanel/profile.php"); //redirect user to member page
+                header("location:userpanel/dash.php"); //redirect user to member page
             }
 
             else

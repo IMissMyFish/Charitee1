@@ -90,9 +90,9 @@ $u1 = "";
 
  }
 
-$pop1 = $_SESSION['pop'][0] + 1;
 
-$result0 = mysqli_query($connection, 'UPDATE charities SET pop = "'.$pop1.'" WHERE uname = "'.$_SESSION['uname'][0].'"  ');
+
+
 
 ?>
 
