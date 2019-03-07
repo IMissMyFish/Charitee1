@@ -34,7 +34,34 @@ if(isset($_POST['action']))
                 $_SESSION['logged_in'] = true;
                 $_SESSION['sess_user'] = $uname;
 
-                header("location:charitypanel/dash.php"); //redirect user to member page
+
+                $sql = "SELECT id FROM charities WHERE uname = '".$_SESSION['sess_user']."' ";
+                $result = mysqli_query($connection, $sql);
+
+
+                  if ($numberofrows > 0) {
+                    // output data of each row
+
+                    $currIteration = 1;
+
+                    $cidT = array();
+
+                    while($row = mysqli_fetch_assoc($result)) {
+                      $cidT[] = $row['id'];
+
+                      $currIteration = $currIteration + 1;
+                    }
+
+                    unset($_SESSION["cidT"]);
+
+                    $_SESSION['cidT'] = $cidT;
+
+
+
+                  }
+
+                  header("Location: ./charitypanel/dash.php");
+
             }
 
             else

@@ -1,0 +1,111 @@
+body {
+
+
+}
+
+#aboutCore {
+background-color: white;
+padding-top: 5%;
+text-align: center;
+margin-bottom: -5%;
+
+}
+
+#missionAbt {
+
+  background-color: rgb(213, 216, 220);
+
+}
+
+
+#storyAbt {
+  background-color: white;
+
+}
+
+#teamAbt {
+  display: inline-block;
+  height: auto;
+    background-color: rgb(213, 216, 220);
+
+}
+
+.abtcrSec {
+
+padding: 3%;
+padding-bottom: 5%;
+
+
+}
+
+.abtcrSec h2{
+margin: auto;
+max-width: 1024px;
+
+}
+
+#abtcrHead {
+
+font-size: 48px;
+margin-bottom: 5%;
+text-align: center;
+
+}
+
+.teamPiece {
+
+margin: auto;
+}
+
+#member {
+margin-left: 9.5%;
+
+float: left;
+width: 20%;
+}
+
+#member img {
+
+border-radius: 30px;
+width: 70%;
+height: 50%;
+
+}
+
+#member h2, #member h3 {
+
+  color: black;
+}
+
+.purpose {
+margin-left: 4%;
+float: left;
+width: 15%;
+
+
+}
+
+.purpose2 {
+margin-left: 13%;
+float: left;
+width: 30%;
+
+
+}
+
+.abtHead {
+
+font-size: 34px;
+
+}
+
+.abtBody {
+
+width: 50%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 2%;
+font-size: 24px;
+
+
+}

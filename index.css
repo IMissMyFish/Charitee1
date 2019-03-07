@@ -9,6 +9,14 @@
 
 }
 
+#xpage{
+
+  height: 100%;
+  width: 100%;
+  background: whitesmoke;
+
+}
+
 
 #bgImg {
 
@@ -38,6 +46,9 @@ z-index: -2;
   -o-transition: background .8s linear;
   transition: background .8s linear;
 }
+
+
+
 
 #logoSec {
 z-index: 5;

@@ -18,7 +18,7 @@ if(isset($_POST['action']))
         $email      = mysqli_real_escape_string($connection,$_POST['email']);
         $psw   = mysqli_real_escape_string($connection,$_POST['psw']);
         $city    = mysqli_real_escape_string($connection,$_POST['city']);
-
+        $state    = mysqli_real_escape_string($connection,$_POST['state']);
         $query = "SELECT email FROM users where email='".$email."'";
         $query2 = "SELECT uname FROM users where uname='".$uname."'";
 
@@ -33,6 +33,11 @@ if(isset($_POST['action']))
         $email = test_input($_POST["email"]);
         $uname = test_input($_POST["uname"]);
         $psw = test_input($_POST["psw"]);
+        $city = test_input($_POST["city"]);
+        $state = test_input($_POST["state"]);
+        $fname = test_input($_POST["fname"]);
+        $lname = test_input($_POST["lname"]);
+        $age = test_input($_POST["age"]);
 
         if (empty($_POST["email"])) {
           $emailErr = " is required";
@@ -79,11 +84,12 @@ if(isset($_POST['action']))
         if (empty($_POST["uname"])) {
           $unameErr = " is required";
           $problemCounter = $problemCounter + 1;
-        } else {
+        }
+        else {
           $uname = test_input($_POST["uname"]);
           // check if name only contains letters and whitespace
-          if (!preg_match("/^[a-zA-Z ]*$/",$uname)) {
-            $nameErr = "Only letters and white space allowed";
+          if (!preg_match("/^[a-zA-Z0-9]*$/",$uname)) {
+            $nameErr = "Only letters and numbers allowed";
             $problemCounter = $problemCounter + 1;
           }
         }
@@ -91,7 +97,8 @@ if(isset($_POST['action']))
         if (empty($_POST["psw"])) {
           $problemCounter = $problemCounter + 1;
           $pswErr = " is required";
-        } else {
+        }
+        else {
           $psw = test_input($_POST["psw"]);
         }
 
@@ -107,7 +114,7 @@ if(isset($_POST['action']))
             $problemCounter = $problemCounter + 1;
         }
 
-        $sql = "insert into `users` (`fname`, `lname`, `uname`, `city`, `age`, `email`, `password`) values('".$fname."','".$lname."','".$uname."','".$city."','".$age."','".$email."','".password_hash($psw, PASSWORD_DEFAULT)."')";
+        $sql = "insert into `users` (`fname`, `lname`, `uname`, `city`, `state`, `age`, `email`, `password`) values('".$fname."','".$lname."','".$uname."','".$city."','".$state."','".$age."','".$email."','".password_hash($psw, PASSWORD_DEFAULT)."')";
 
         if($problemCounter == 0){
 
@@ -165,33 +172,91 @@ function test_input($data) {
 
       <label for="email"><b>Email</b></label>
       <span class="error">* <?php echo $emailErr;?></span>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Email"  pattern = ".{1,}" name="email" required>
 
       <label for="fname"><b>First Name</b></label>
       <span class="error">* <?php echo $fnameErr;?></span>
-      <input type="text" placeholder="Enter First Name" name="fname" required>
+      <input type="text" placeholder="Enter First Name"  pattern = ".{1,}" name="fname" required>
 
       <label for="lname"><b>Last Name</b></label>
       <span class="error">* <?php echo $lnameErr;?></span>
-      <input type="text" placeholder="Enter Last Name" name="lname" required>
+      <input type="text" placeholder="Enter Last Name"   pattern = ".{1,}" name="lname" required>
 
       <label for="city"><b>City</b></label>
-      <span class="error">* <?php echo $cityErr;?></span>
-      <input type="text" placeholder="Enter Your City  " name="city"required>
+      <br>
+      <select placeholder="City"  name="city" required>* <?php echo $cityErr;?>
+        <option value="Tallahassee">Tallahassee</option>
+      </select>
+<br><br>
+      <label for="state"><b>State</b></label>
+      <br>
+      <select placeholder="Enter State of listing" name="state" required><?php echo $stateErr ?>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+<br><br>
 
       <label for="age"><b>Age</b></label>
       <span class="error">* <?php echo $ageErr;?></span>
-      <input type="text" placeholder="Enter Your Age" name="age"required>
+      <input type="text" placeholder="Enter Your Age"  pattern="[0-9]{2,3}" name="age"required>
 
 
-      <label for="uname"><b>Username</b></label>
+      <label for="uname"><b>Username (6-32 characters)</b></label>
       <span class="error">* <?php echo $unameErr;?></span>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="uname"  pattern=".{6,32}" required>
 
 
-      <label for="psw"><b>Password</b></label>
+      <label for="psw"><b>Password (6-32 characters)</b></label>
       <span class="error">* <?php echo $pswErr;?></span>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password"  pattern=".{6,32}" name="psw" required>
 
        <input name="action" type="hidden" value="signup" />
       <button type="submit" value = "Signup">Signup</button>
